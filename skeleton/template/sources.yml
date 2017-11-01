@@ -1,0 +1,14 @@
+--- !!org.boothub.context.SourceContext
+artifact: {{appModule.artifact}}
+fileContexts:
+    - !!org.boothub.context.SourceFileContext
+      fileName: JavaMain.java
+      targetBaseDir: src/main/java
+      targetPackage: {{appModule.basePackage}}
+      targetFileClass: {{appModule.artifactAsClassName}}Main
+
+    - !!org.boothub.context.SourceFileContext
+      fileName: JavaTest.java
+      targetBaseDir: src/test/java
+      targetPackage: {{appModule.basePackage}}
+      targetFileClass: {{appModule.artifactAsClassName}}Test

@@ -1,0 +1,12 @@
+--- !!org.boothub.context.StandardProjectContext$Single
+group: org.bizarre-soft
+
+versionMajor: 1
+
+ghProjectId: weirdo
+
+appModule: !!org.boothub.context.StandardModuleContext
+    artifact: weird-app
+    basePackage: org.bizarre_soft.weird_app
+
+appMainClass: WeirdAppMain

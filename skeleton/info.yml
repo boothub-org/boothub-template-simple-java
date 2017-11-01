@@ -1,0 +1,21 @@
+id: org.boothub.simple-java
+name: Simple Java
+caption: A Gradle-based Java project with a main class and a JUnit test class.
+version:
+  major: 0
+  minor: 1
+  patch: 0
+
+minimumRequiredBootHub:
+  major: 0
+  minor: 1
+  patch: 0
+
+homepage: http://www.boothub.org/skeletons/simple-java
+
+authors:
+  - Serban Iordache
+
+tags:
+  - java
+  - gradle

@@ -1,0 +1,3 @@
+--- !!org.boothub.context.FileContext
+filePath: ___gitignore
+targetPath: .gitignore
