@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev
-./gradlew -Dtest.verbose=true build asciidoc
+./gradlew -Dtest.verbose=true build groovydoc asciidoc
 
 if [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "master" ]; then
   if [ "`git ls-remote origin gh-pages`" == "" ]; then
