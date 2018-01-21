@@ -1,9 +1,16 @@
 [[dev_guide]]
 = Developer Guide
 
+This section is for developers who want to fix bugs or change the functionality of the Simple-Java template.
+
+TIP: Read about http://doc.boothub.org/releases/latest/#Templates[writing BootHub templates] before starting to change the Simple-Java template.
+
+The Simple-Java template comes with a suite of tests that generate various skeletons and check their validity.
+You should update these tests and add new ones according to the changes you make.
+
 *Command Line Build*
 
-boothub-template-simple-java is built with http://www.gradle.org[Gradle] and requires JDK 8 or higher.
+The Simple-Java template is built with http://www.gradle.org[Gradle] and requires JDK 8 or higher.
 Clone the GitHub repository, `cd` into the top directory and start the build:
 
 [source]
@@ -17,23 +24,11 @@ cd boothub-template-simple-java
 *IntelliJ Idea*
 
 - start the IntelliJ Idea IDE
-- make sure that the Groovy plugin is enabled
 - open _build.gradle_
 
 
 *Eclipse*
 
 - start the Eclipse IDE
-- install the Groovy plugin; update site: http://dist.springsource.org/snapshot/GRECLIPSE/e4.6/
-- install a recent version of https://projects.eclipse.org/projects/tools.buildship[Buildship].
+- install a recent version of https://projects.eclipse.org/projects/tools.buildship[Buildship]
 - import the project using the Gradle Project wizard
-
-
-
-*Upload to Bintray*
-
-The Bintray credentials must be available in a file called _gradle-local.properties_.
-You can use link:{blob-root}/gradle-local.template.properties[gradle-local.template.properties] as template and adjust it accordingly.
-
-
-*TBD*

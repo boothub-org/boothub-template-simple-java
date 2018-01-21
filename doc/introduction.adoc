@@ -3,11 +3,11 @@
 
 NOTE: The source code is available on https://github.com/boothub-org/boothub-template-simple-java[GitHub].
 
-boothub-template-simple-java is licensed under the Apache-2.0 license.
+The Simple-Java template is licensed under the Apache-2.0 license.
 Click on the icon below to read the license file:
 
 image::license.png[role="thumb" link="{blob-root}/LICENSE"]
 
-A few words about boothub-template-simple-java:
+The Simple-Java BootHub template allows you to create a Java project with a main class and a JUnit test class.
 
-*TBD*
+It provides a Gradle build file that adds support for versioning, checking license headers, jar signing and publishing to JCenter and Maven Central.

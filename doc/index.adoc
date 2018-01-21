@@ -1,5 +1,5 @@
-= boothub-template-simple-java
-:author: 
+= The Simple-Java BootHub Template
+:author: Serban Iordache
 :revnumber: {project-version}
 :toc: left
 :toclevels: 3

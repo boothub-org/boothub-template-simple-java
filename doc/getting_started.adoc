@@ -1,22 +1,56 @@
 [[getting_started]]
 = Getting Started
 
-CAUTION: You need Java 8 or newer in order to use boothub-template-simple-java.
+You can generate a project skeleton based on the Simple-Java template by using the
+http://boothub.org/app#/home/true/https%3A%2F%2Fgithub.com%2Fboothub-org%2Fboothub-template-simple-java%2Freleases%2Fdownload%2Fv{project-version}%2Fsimple-java-{project-version}.zip[BootHub GUI, role="external", window="_blank"]
+or the
+http://boothub.org/app#/cli[BootHub CLI, role="external", window="_blank"].
 
-boothub-template-simple-java is available in Maven Central and JCenter.
+After providing the http://doc.boothub.org/releases/latest/#template-independent-data[template-independent data], you need to configure the
+https://maven.apache.org/guides/mini/guide-naming-conventions.html[Maven groupId] of your project:
 
-[subs="attributes",options="nowrap",title="Maven"]
-----
+++++
+<div class="black-background">
+<pre class="lime" style="margin-left: 20px;">
 
-&lt;dependency&gt;
-    &lt;groupId&gt;{project-group}&lt;/groupId&gt;
-    &lt;artifactId&gt;{project-name}&lt;/artifactId&gt;
-    &lt;version&gt;{project-version}&lt;/version&gt;
-&lt;/dependency&gt;
-----
+Maven groupId: <span class="yellow">org.myproject</span>
 
-[subs="attributes",options="nowrap",title="Gradle"]
-----
+</pre>
+</div>
+<pre>
 
-compile '{project-group}:{project-name}:{project-version}'
-----
+</pre>
+++++
+
+Then you need to configure the artifact ID, the base package and the name of the main class of your application:
+
+++++
+<div class="black-background">
+<pre class="lime" style="margin-left: 20px;">
+
+Artifact ID [my-project]: ​
+Base package [org.myproject]: ​
+Application main class name [MyProjectMain]: ​MyApp
+
+</pre>
+</div>
+<pre>
+
+</pre>
+++++
+
+The final step is to provide information about the project developers:
+
+++++
+<div class="black-background">
+<pre class="lime" style="margin-left: 20px;">
+
+Developers
+Developer ID [jsmith]:
+Developer name [John Smith]:
+Developer email (optional):
+More developers? (Y/N) [N]:
+
+</pre>
+</div>
+++++
