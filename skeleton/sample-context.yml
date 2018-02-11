@@ -12,9 +12,8 @@ appModule: !!org.boothub.context.StandardModuleContext
 appMainClass: WeirdAppMain
 
 developers:
-  - id: ob1
-    name: Lux Kye Walker
-    # email: force@war.mil
-  - id: jefrigerator
-    name: Jeffrey J. Rater
-    email: jr@frozen.gov
+  - id: jsmith
+    name: John Smith
+  - id: ejohnson
+    name: Emma Johnson
+    email: emma@johnson.gov
