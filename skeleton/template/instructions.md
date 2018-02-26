@@ -29,4 +29,4 @@ The following text should appear on your screen:
 Hello from {{appMainClass}}!
 ```
 
-See the [skeleton documentation](http://simple-java.boothub.org) for more info.
+See the [template documentation](http://simple-java.boothub.org) for more info.
