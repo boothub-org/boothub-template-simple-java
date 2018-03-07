@@ -46,9 +46,9 @@ def pomConfig = {
 
 apply plugin: 'signing'
 repositories {
-  jcenter()
-  mavenCentral()
-  maven { url 'https://jitpack.io' }
+    jcenter()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 apply plugin: 'application'
@@ -75,14 +75,14 @@ signing {
 }
 
 signArchives {
-  onlyIf { gradle.taskGraph.allTasks.findAll {task -> isPublishTask(task)} }
+    onlyIf { gradle.taskGraph.allTasks.findAll {task -> isPublishTask(task)} }
 }
 
 dependencies {
-  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
-  runtime ('ch.qos.logback:logback-classic:1.1.7')
-  testCompile 'junit:junit:4.12'
-  testCompile('ch.qos.logback:logback-classic:1.1.7')
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    runtime ('ch.qos.logback:logback-classic:1.1.7')
+    testCompile 'junit:junit:4.12'
+    testCompile('ch.qos.logback:logback-classic:1.1.7')
 }
 
 jar {
@@ -147,7 +147,7 @@ def readPasswordFromConsole(title, prompt) {
 }
 
 def isPublishTask(task) {
-  task.name.startsWith('publish')
+    task.name.startsWith('publish')
 }
 
 gradle.taskGraph.whenReady { taskGraph ->
