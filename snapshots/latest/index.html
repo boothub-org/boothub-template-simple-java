@@ -5,7 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>boothub-template-simple-java</title>
+<meta name="author" content="Serban Iordache">
+<title>The Simple-Java BootHub Template</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -13,17 +14,29 @@
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>boothub-template-simple-java</h1>
+<h1>The Simple-Java BootHub Template</h1>
 <div class="details">
-<span id="author" class="author"></span><br>
-<span id="revnumber">version 0.3.2-SNAPSHOT</span>
+<span id="author" class="author">Serban Iordache</span><br>
+<span id="revnumber">version 0.4.1-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#getting_started">Getting Started</a></li>
-<li><a href="#user_guide">User Guide</a></li>
+<li><a href="#user_guide">User Guide</a>
+<ul class="sectlevel2">
+<li><a href="#idea">IntelliJ Idea</a></li>
+<li><a href="#eclipse">Eclipse</a></li>
+<li><a href="#versioning">Versioning</a></li>
+<li><a href="#_license_header_check">License header check</a></li>
+<li><a href="#_publishing_to_jcenter_and_maven_central">Publishing to JCenter and Maven Central</a>
+<ul class="sectlevel3">
+<li><a href="#_credentials">Credentials</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#dev_guide">Developer Guide</a></li>
 </ul>
 </div>
@@ -45,7 +58,7 @@ The source code is available on <a href="https://github.com/boothub-org/boothub-
 </table>
 </div>
 <div class="paragraph">
-<p>boothub-template-simple-java is licensed under the Apache-2.0 license.
+<p>The Simple-Java template is licensed under the Apache-2.0 license.
 Click on the icon below to read the license file:</p>
 </div>
 <div class="imageblock thumb">
@@ -54,46 +67,64 @@ Click on the icon below to read the license file:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>A few words about boothub-template-simple-java:</p>
+<p>The Simple-Java BootHub template allows you to create a Java project with a main class and a JUnit test class.</p>
 </div>
 <div class="paragraph">
-<p><strong>TBD</strong></p>
+<p>It provides a Gradle build file that adds support for versioning, checking license headers, jar signing and publishing to JCenter and Maven Central.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="getting_started">Getting Started</h2>
 <div class="sectionbody">
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-You need Java 8 or newer in order to use boothub-template-simple-java.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>You can generate a project skeleton based on the Simple-Java template by using the
+<a href="https://boothub.org/app#/home/true/https%3A%2F%2Fgithub.com%2Fboothub-org%2Fboothub-template-simple-java%2Freleases%2Fdownload%2Fv0.4.1-SNAPSHOT%2Fsimple-java-0.4.1-SNAPSHOT.zip" class="external" target="_blank">BootHub GUI</a>
+or the
+<a href="https://boothub.org/app#/cli" class="external" target="_blank">BootHub CLI</a>.</p>
 </div>
 <div class="paragraph">
-<p>boothub-template-simple-java is available in Maven Central and JCenter.</p>
+<p>After providing the <a href="http://doc.boothub.org/releases/latest/#template-independent-data">template-independent data</a>, you need to configure the
+<a href="https://maven.apache.org/guides/mini/guide-naming-conventions.html">Maven groupId</a> of your project:</p>
 </div>
-<div class="listingblock">
-<div class="title">Maven</div>
-<div class="content">
-<pre class="nowrap">&lt;dependency&gt;
-    &lt;groupId&gt;org.boothub&lt;/groupId&gt;
-    &lt;artifactId&gt;boothub-template-simple-java&lt;/artifactId&gt;
-    &lt;version&gt;0.3.2-SNAPSHOT&lt;/version&gt;
-&lt;/dependency&gt;</pre>
+<div class="black-background">
+<pre class="lime" style="margin-left: 20px;">
+
+Maven groupId: <span class="yellow">org.myproject</span>
+
+</pre>
 </div>
+<pre>
+
+</pre>
+<div class="paragraph">
+<p>Then you need to configure the artifact ID, the base package and the name of the main class of your application:</p>
 </div>
-<div class="listingblock">
-<div class="title">Gradle</div>
-<div class="content">
-<pre class="nowrap">compile 'org.boothub:boothub-template-simple-java:0.3.2-SNAPSHOT'</pre>
+<div class="black-background">
+<pre class="lime" style="margin-left: 20px;">
+
+Artifact ID [my-project]: ​
+Base package [org.myproject]: ​
+Application main class name [MyProjectMain]: ​MyApp
+
+</pre>
 </div>
+<pre>
+
+</pre>
+<div class="paragraph">
+<p>The final step is to provide information about the project developers:</p>
+</div>
+<div class="black-background">
+<pre class="lime" style="margin-left: 20px;">
+
+Developers
+Developer ID [jsmith]:
+Developer name [John Smith]:
+Developer email (optional):
+More developers? (Y/N) [N]:
+
+</pre>
 </div>
 </div>
 </div>
@@ -101,10 +132,157 @@ You need Java 8 or newer in order to use boothub-template-simple-java.
 <h2 id="user_guide">User Guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following section describes the steps required to start using boothub-template-simple-java:</p>
+<p>After generating the project skeleton and creating a working copy on your computer, you can build the project with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gradlew build</pre>
+</div>
 </div>
 <div class="paragraph">
-<p><strong>TBD</strong></p>
+<p>You can also build an uncompressed distribution by executing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gradlew installDist</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let us consider that your project is called <code>my-project</code> and your main application class is named <code>MyApp</code>.
+Then, running the start script found in the <code>build/install/myProject/bin</code> directory, the following text should appear on your terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Hello from MyApp!</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="idea">IntelliJ Idea</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>start the IntelliJ Idea IDE</p>
+</li>
+<li>
+<p>open <em>build.gradle</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eclipse">Eclipse</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>start the Eclipse IDE</p>
+</li>
+<li>
+<p>install a recent version of <a href="https://projects.eclipse.org/projects/tools.buildship">Buildship</a></p>
+</li>
+<li>
+<p>import the project using the Gradle Project wizard</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="versioning">Versioning</h3>
+<div class="paragraph">
+<p>The file <code>gradle.properties</code> contains variables that are used to create a version string conforming to the <a href="https://semver.org">semantic versioning</a> standard.
+The names of these variables are prefixed by the camelCase representation of the project name, for example:
+<code>myProjectVersionMajor</code>, <code>myProjectVersionMinor</code>, <code>myProjectVersionPatch</code>.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, a boolean variable (named for example <code>myProjectReleaseBuild</code>) is used to specify whether the current build represents a release or a snapshot.</p>
+</div>
+<div class="paragraph">
+<p>By editing the values of these variables you can change the version of your project.</p>
+</div>
+<div class="paragraph">
+<p>For example, to bump your project version to <code>1.2.3-SNAPSHOT</code>, your <code>gradle.properties</code> should contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>myProjectVersionMajor = 1
+myProjectVersionMinor = 2
+myProjectVersionPatch = 3
+myProjectReleaseBuild = false</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_license_header_check">License header check</h3>
+<div class="paragraph">
+<p>The Gradle build script uses the <a href="https://github.com/hierynomus/license-gradle-plugin">license-gradle-plugin</a>
+to check if your source files include the header provided in the <code>license-header.txt</code> file.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_publishing_to_jcenter_and_maven_central">Publishing to JCenter and Maven Central</h3>
+<div class="paragraph">
+<p>The Gradle task <code>bintrayUpload</code> lets you publish your artifacts to <a href="https://bintray.com/">Bintray</a>.
+You can then <a href="https://bintray.com/docs/usermanual/uploads/uploads_centralrepositories.html#_including_your_package_in_jcenter">include your packages in JCenter</a>
+and <a href="https://bintray.com/docs/usermanual/uploads/uploads_syncingwiththirdpartyplatforms.html#_syncing_artifacts_with_maven_central">synchronize them with Maven Central</a>.</p>
+</div>
+<div class="paragraph">
+<p>Before being able to execute the <code>bintrayUpload</code> task, you need to configure your credentials.</p>
+</div>
+<div class="sect3">
+<h4 id="_credentials">Credentials</h4>
+<div class="paragraph">
+<p>Your Gradle build script uses the <a href="https://github.com/stevesaliman/gradle-properties-plugin">gradle-properties-plugin</a>,
+which allows you to configure additional project properties in the <code>gradle-local.properties</code> file.</p>
+</div>
+<div class="paragraph">
+<p>This is the file in which you should configure your credentials.
+Since <code>gradle-local.properties</code> is already listed in your project&#8217;s <code>.gitignore</code> file, your credentials will not be committed to git.</p>
+</div>
+<div class="paragraph">
+<p>To create this file you can simply copy the provided template file <code>gradle-local-template.properties</code> to <code>gradle-local.properties</code>.
+The content of this file is shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>signingKeyId = A0B1C2D3
+signingSecretKeyRingFile = C:/dev/gpg/jsmith.gpg
+
+bintrayUser = jsmith
+bintrayKey = a0b1c2d3e4f5a0b1c2d3e4f5a0b1c2d3e4f5a0b1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You need to configure the appropriate values for the above properties, which are used for signing your artifacts and for granting you access to Bintray.</p>
+</div>
+<div class="paragraph">
+<p>The signing credentials consist of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the public key ID (an 8 character hexadecimal string)</p>
+</li>
+<li>
+<p>the absolute path to the secret key ring file containing your private key</p>
+</li>
+<li>
+<p>the passphrase used to protect your private key</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The passphrase of your private key is a very sesnsitive information, therefore it is not stored in the <code>gradle-local.properties</code>.
+Instead, Gradle will ask you to enter it each time you execute the <code>bintrayUpload</code> task.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.gnupg.org/documentation/howtos.html">GnuPG documentation</a> and the
+<a href="https://docs.gradle.org/current/userguide/signing_plugin.html">Gradle signing plugin</a> for details on how to create and configure your signatures.</p>
+</div>
+<div class="paragraph">
+<p>The Bintray credentials consist of your Bintray user name and your
+<a href="https://bintray.com/docs/usermanual/interacting/interacting_interacting.html#anchorAPIKEY">Bintray API Key</a>.
+See the documentation of the <a href="https://github.com/bintray/gradle-bintray-plugin">gradle-bintray-plugin</a> for more details.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -112,10 +290,29 @@ You need Java 8 or newer in order to use boothub-template-simple-java.
 <h2 id="dev_guide">Developer Guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>This section is for developers who want to fix bugs or change the functionality of the Simple-Java template.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Read about <a href="http://doc.boothub.org/releases/latest/#Templates">writing BootHub templates</a> before starting to change the Simple-Java template.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Simple-Java template comes with a suite of tests that generate various skeletons and check their validity.
+You should update these tests and add new ones according to the changes you make.</p>
+</div>
+<div class="paragraph">
 <p><strong>Command Line Build</strong></p>
 </div>
 <div class="paragraph">
-<p>boothub-template-simple-java is built with <a href="http://www.gradle.org">Gradle</a> and requires JDK 8 or higher.
+<p>The Simple-Java template is built with <a href="http://www.gradle.org">Gradle</a> and requires JDK 8 or higher.
 Clone the GitHub repository, <code>cd</code> into the top directory and start the build:</p>
 </div>
 <div class="listingblock">
@@ -134,9 +331,6 @@ cd boothub-template-simple-java
 <p>start the IntelliJ Idea IDE</p>
 </li>
 <li>
-<p>make sure that the Groovy plugin is enabled</p>
-</li>
-<li>
 <p>open <em>build.gradle</em></p>
 </li>
 </ul>
@@ -150,32 +344,19 @@ cd boothub-template-simple-java
 <p>start the Eclipse IDE</p>
 </li>
 <li>
-<p>install the Groovy plugin; update site: <a href="http://dist.springsource.org/snapshot/GRECLIPSE/e4.6/" class="bare">http://dist.springsource.org/snapshot/GRECLIPSE/e4.6/</a></p>
-</li>
-<li>
-<p>install a recent version of <a href="https://projects.eclipse.org/projects/tools.buildship">Buildship</a>.</p>
+<p>install a recent version of <a href="https://projects.eclipse.org/projects/tools.buildship">Buildship</a></p>
 </li>
 <li>
 <p>import the project using the Gradle Project wizard</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>Upload to Bintray</strong></p>
-</div>
-<div class="paragraph">
-<p>The Bintray credentials must be available in a file called <em>gradle-local.properties</em>.
-You can use <a href="https://github.com/boothub-org/boothub-template-simple-java/blob/master/gradle-local.template.properties">gradle-local.template.properties</a> as template and adjust it accordingly.</p>
-</div>
-<div class="paragraph">
-<p><strong>TBD</strong></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.3.2-SNAPSHOT<br>
+Version 0.4.1-SNAPSHOT<br>
 </div>
 </div>
 </body>
